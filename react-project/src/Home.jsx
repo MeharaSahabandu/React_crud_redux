@@ -7,7 +7,7 @@ export default function Home() {
   console.log(users);
   return (
     <div>
-      <Link to = "/create"> Create New User </Link>
+      <Link to = "/create"> Create User </Link>
       <br /> <br />
       <table>
         <thead>

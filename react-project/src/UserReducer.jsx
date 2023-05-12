@@ -4,7 +4,11 @@ import { userList } from "./Data.jsx";
 const userSlice = createSlice({
     name: "users",
     initialState: userList,
-    reducers: {},
+    reducers: {
+        addUser:(state, action) => {
+            console.log(action);
+    },},
 });
 
+export const { addUser } = userSlice.actions;
 export default userSlice.reducer;
