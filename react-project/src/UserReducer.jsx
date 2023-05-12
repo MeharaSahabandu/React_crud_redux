@@ -17,9 +17,17 @@ const userSlice = createSlice({
         uu.age = age;
       }
     },
+    deleteUser: (state, action) => {
+      const { id } = action.payload;
+      const uu = state.find((user) => user.id == id);
+      if (uu) {
+        return state.filter(f => f.id != id);
+      }
+    },
   },
 });
 
 export const { addUser } = userSlice.actions;
 export default userSlice.reducer;
 export const { updateUser } = userSlice.actions;
+export const { deleteUser } = userSlice.actions;
