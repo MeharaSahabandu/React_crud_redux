@@ -2,11 +2,14 @@ import React , {useState} from "react";
 import { addUser } from "./UserReducer";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Create() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const users = useSelector((state) => state.users);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -14,6 +17,7 @@ export default function Create() {
         e.preventDefault();
         // console.log(name, age);
         dispatch(addUser({id: users[users.length-1].id+1,name, age}));
+        navigate("/");
     }
 
   return (

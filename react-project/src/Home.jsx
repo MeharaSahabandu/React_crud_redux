@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const users = useSelector((state) => state.users);
+  
   console.log(users);
   return (
     <div>
@@ -26,7 +28,7 @@ export default function Home() {
               <td>{user.age}</td>
               {/* update and delete buttons */}
               <td>
-                <button>Update</button>
+                <Link to ={`/edit/${user.id}`} >Update</Link>
               </td>
               <td>
                 <button>Delete</button>
